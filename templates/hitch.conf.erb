@@ -12,4 +12,10 @@ write-proxy-v2 = "<%= scope['hitch::write_proxy_v2'] %>"
 
 # Define a cipher list for communication
 ciphers               = "<%= scope['hitch::ciphers'] %>"
+<% if scope['hitch::tls_protos'] -%>
+tls-protos = "<%= scope['hitch::tls_protos'] %>"
+<% end -%>
+<% if scope['hitch::alpn_protos'] -%>
+alpn-protos = "<%= scope['hitch::alpn_protos'] %>"
+<% end -%>
 prefer-server-ciphers = on
