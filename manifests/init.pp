@@ -56,6 +56,8 @@ class hitch (
   String $backend,
   Enum['on', 'off'] $write_proxy_v2,
   String $ciphers,
+  Optional[String] $tls_protos,
+  Optional[String] $alpn_protos,
   Optional[Hash] $domains,
   Optional[String] $dhparams_content,
   Boolean $manage_repo,
@@ -78,6 +80,8 @@ class hitch (
     backend           => $backend,
     write_proxy_v2    => $write_proxy_v2,
     ciphers           => $ciphers,
+    tls_protos        => $tls_protos,
+    alpn_protos       => $alpn_protos,
   }
   ~> class { '::hitch::service':
     service_name => $service_name,

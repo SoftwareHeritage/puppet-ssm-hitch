@@ -16,6 +16,8 @@ class hitch::config (
   String $frontend,
   String $backend,
   String $ciphers,
+  Optional[String] $tls_protos,
+  Optional[String] $alpn_protos,
 ) {
 
   file { $config_root:
